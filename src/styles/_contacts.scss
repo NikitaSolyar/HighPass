@@ -1,0 +1,489 @@
+@import '_common.scss';
+@import '_variables';
+@import '_mixin';
+
+.contacts {
+  max-width: $fullcontainer;
+  background-color: #E5E5E5;
+}
+
+.contacts__container {
+  max-width: $containerMaxidth;
+  margin: $margin;
+  padding-bottom: 57px;
+}
+
+.contacts__title {
+  @include title;
+  color: $black;
+}
+
+.contacts__grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 15px;
+}
+
+.myMap {
+  max-width: 850px;
+  height: 460px;
+}
+
+.contacts__form-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contacts__form-title {
+  margin-bottom: 5px;
+  font-family: 'TT Firs Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 22px;
+  color: #202020;
+}
+
+.contacts__left {
+  position: relative;
+  max-width: 100%;
+  max-height: 472px;
+  min-height: 472px;
+  grid-column: span 2;
+  margin-top: 7px;
+}
+
+.contacts__map {
+  height: 100%;
+}
+
+.contacts__svg {
+  width: 20px;
+  height: 20px;
+}
+
+.contacts [class*=ground-pane] {
+  filter: grayscale(1);
+}
+
+.contacts__desc {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 50%;
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(32, 32, 32, 0.85);
+  z-index: 10;
+  padding: 175px 50px 150px 60px;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+.contacts__desc_active {
+  animation: showElem 0.2s ease-in-out;
+  opacity: 1;
+  visibility: visible;
+}
+
+.contacts__caption {
+  display: block;
+  margin-bottom: 5px;
+  font-family: 'TT Firs Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 22px;
+  color: $white;
+}
+
+.contacts__address {
+  margin-bottom: 3px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: $colorContent;
+}
+
+.contacts__tel,
+.contacts__form {
+  display: flex;
+}
+
+.contacts__tel {
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  font-family: 'TT Firs Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  color: #FF6E30;
+}
+
+.contacts__tel svg {
+  fill: $white;
+  transition: fill 0.2s ease-in-out;
+}
+
+.contacts__tel_tablet {
+  display: none;
+}
+
+.contacts__tel:hover {
+  color: #ff6e30;
+}
+
+.contacts__tel:hover svg {
+  fill: #ff6e30;
+}
+
+.contacts__tel:focus {
+  background-color: #bc572b;
+  color: $white;
+}
+
+.contacts__tel:focus svg {
+  fill: $white;
+}
+
+.contacts__tel:active {
+  background-color: transparent;
+  color: #ce4307;
+}
+
+.contacts__tel:active svg {
+  fill: #ce4307;
+}
+
+.contacts__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.contacts__form-about {
+  @include clear;
+  @include text;
+  width: 350px;
+  margin-bottom: 14px;
+  color: #999999;
+}
+
+.contacts__form-list {
+  @include clear;
+  margin-bottom: 18px;
+}
+
+.contacts__form-list1 {
+  @include clear;
+  margin-bottom: 5px;
+}
+
+.contacts__form-style {
+  width: 410px;
+  height: 50px;
+  @include clear;
+  padding-top: 0;
+  padding-left: 23px;
+  border: 1px solid #999999;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  background-color: #E9E9E9;
+  color: #999999;
+}
+
+.contacts__form-style1 {
+  width: 410px;
+  height: 50px;
+  @include clear;
+  padding-top: 15px;
+  padding-left: 23px;
+  border: 1px solid #999999;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  background-color: #E9E9E9;
+  color: #999999;
+}
+
+.style1 {
+  width: 410px;
+  height: 150px;
+
+  background-color: #E9E9E9;
+}
+
+.contacts__form-btn {
+  @include clear;
+  @include clearbtn;
+  margin-bottom: 9px;
+  border: 2px solid #FF6E30;
+  background-color: #FF6E30;
+}
+
+.contacts__form-btn:hover {
+  background-color: #bc572b;
+  outline: 3px solid #bc572b;
+}
+
+.contacts__form-btn:focus {
+  background-color: #ff6e30;
+}
+
+.contacts__form-btn:focus,
+.contacts__form-btn:active {
+  outline: 3px solid #ce4307;
+}
+
+.contacts__form-btn:active {
+  background-color: #ce4307;
+}
+
+@media (max-width: 1280px) {
+  .contacts {
+    @include padding1024;
+  }
+
+  .contacts__container {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(218px, 342px) minmax(218px, 1fr) minmax(218px, 342px)
+  )}
+
+  .contacts__grid {
+    padding-top: 10px;
+  }
+
+  .contacts__tel {
+    color: #FF6E30;
+    &_tablet {
+      display: inline;
+      svg {
+        display: inline;
+        fill: #FF6E30;
+        transform: translateY(3px);
+      }
+    }
+  }
+  .contacts__desc {
+    right: 0;
+    height: auto;
+    top: 303px;
+    padding-top: 25px;
+    padding-bottom: 21px;
+  }
+
+  .contacts__desc {
+    display: none;
+  }
+
+  .contacts__map {
+    max-height: 460px;
+    min-height: 460px;
+  }
+
+  .contacts__form {
+    width: 342px;
+  }
+
+  .contacts__form-style {
+    width: 342px;
+  }
+
+  .contacts__form-middle {
+    justify-content: flex-start;
+
+  }
+}
+
+@media (max-width: 800px) {
+  .contacts {
+    @include padding800;
+    &__container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    &__grid {
+      grid-template-rows:  fit-content(460px) fit-content(460px);
+      gap: 0;
+      padding-top: 0;
+    }
+    &__left {
+      margin-bottom: 24px;
+      grid-column: 1 / -1;
+    }
+    &__right {
+      grid-column: span 2;
+    }
+    &__desc {
+      padding-left: 30px;
+      padding-bottom: 24px;
+    }
+    &__tel {
+      &_tablet {
+        display: none;
+      }
+      &_desk {
+        display: flex;
+        svg {
+          fill: #FF6E30;
+        }
+      }
+    }
+    &__form {
+      &__form-list {
+        width: 466px;
+      }
+      &__form-style {
+        width: 466px;
+      }
+    }
+  }
+
+  .contacts__form-about {
+    width: 445px;
+  }
+
+  .contacts__form-list {
+    width: 466px;
+    margin: 0 0 17px;
+  }
+
+  .contacts__form-style {
+    width: 466px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contacts {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 34px;
+    grid-template-rows: repeat(2, 1fr);
+
+  }
+  .contacts__title {
+    @include padding800;
+    margin-bottom: 20px;
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    color: $black;
+  }
+
+  .contacts__container {
+    grid-template-columns: 1fr;
+    column-gap: 0px;
+    padding-bottom: 50px;
+  }
+
+  .contacts__grid {
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 0;
+  }
+
+  .contacts__left {
+    grid-column: 1 / 2;
+    width: 320px;
+    max-height: 472px;
+    min-height: 472px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .map {
+    width: 320px;
+    min-height: 472px;
+    max-height: 472px;
+  }
+
+  .contacts__address,
+  .contacts__tel {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .contacts__desc {
+    top: 315px;
+    padding: 25px 34px 14px 18px;
+  }
+
+  .contacts__caption {
+    margin-bottom: 7px;
+  }
+
+  .contacts__content {
+    margin-bottom: 16px;
+  }
+
+  .contacts__form {
+    @include padding800;
+    padding-top: 15px;
+    grid-column: 1 / 2;
+  }
+
+  .contacts__form-title {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: $black;
+  }
+
+  .contacts__form-about {
+    width: 278px;
+    padding-top: 4px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #999999;
+  }
+
+  .contacts__form-list {
+    width: 278px;
+    margin: 0 0 17px;
+  }
+
+  .contacts__form-style {
+    width: 278px;
+    height: 40px;
+    padding: 12px 0 0 23px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #999999;
+  }
+
+  .style1 {
+    width: 278px;
+    height: 150px;
+  }
+
+  .contacts__form-btn {
+    width: 115px;
+    height: 38px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
